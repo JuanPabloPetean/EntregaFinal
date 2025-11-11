@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Obras</title>
+</head>
+<body>
+    <h1>Obras de Teatro</h1>
+    {% if obras %}
+        <ul>
+        {% for obra in obras %}
+            <li><h2>{{ obra.titulo }}</h2>
+            <ul>
+                <li>Fecha de estreno: {{obra.fecha_estreno}}</li>
+                <li>Autor: {{obra.autor}}</li>
+                <li>Descripción: {{obra.descripcion}}</li>
+                <li>Genero: {{obra.genero}}</li>
+            </ul>
+            
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No hay obras registradas.</p>
+    {% endif %}
+</body>
+</html>
