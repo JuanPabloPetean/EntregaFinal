@@ -6,6 +6,7 @@
 <body>
     <h1>Obras de Teatro</h1>
     {% if obras %}
+    <p><a href="{% url 'crear_obra' %}">Crear nueva obra</a></p>
         <ul>
         {% for obra in obras %}
             <li><h2>{{ obra.titulo }}</h2>
@@ -18,7 +19,7 @@
             
             </li>
         {% endfor %}
-        </ul>
+            <li>{{ obra.titulo }} — {{ obra.autor }}</li>
     {% else %}
         <p>No hay obras registradas.</p>
     {% endif %}

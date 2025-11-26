@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Obra</title>
+</head>
+<body>
+    <h1>Crear nueva obra</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Crear</button>
+    </form>
+    <p><a href="{% url 'lista_obras' %}">Volver a la lista</a></p>
+</body>
+</html>
