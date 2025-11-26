@@ -6,7 +6,10 @@ class Obra(models.Model):
     descripcion = models.TextField()
     fecha_estreno = models.DateField()
     genero = models.CharField(max_length=50)
+    imagen = models.FileField(upload_to='obras/', null=True, blank=True)
 
     def __str__(self):
         return self.titulo
     
+    class Meta:
+        ordering = ['-fecha_estreno']

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Acerca de - Teatro Proyecto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Acerca de Mí</h1>
+    
+    <div style="margin: 2rem 0;">
+        <h2>Juan Pablo Petean</h2>
+        <p><strong>Curso:</strong> Programación en Python</p>
+        <p><strong>Tema:</strong> Entrega Final: Gestión de Obras de Teatro</p>
+        
+        <h2>Sobre Este Proyecto</h2>
+        <p>
+            Este proyecto es una aplicación web desarrollada con Django para gestionar obras de teatro.
+            Permite a los usuarios crear, visualizar, editar y eliminar obras, con un sistema completo
+            de autenticación de usuarios.
+        </p>
+        
+        <h2>Funcionalidades Principales</h2>
+        <ul style="margin-left: 1.5rem;">
+            <li><strong>Sistema de Autenticación:</strong> Login, logout y registro de usuarios</li>
+            <li><strong>Gestión de Obras:</strong> CRUD completo para obras de teatro</li>
+            <li><strong>Interfaz Intuitiva:</strong> Diseño responsivo y fácil de usar</li>
+            <li><strong>Imágenes:</strong> Soporte para cargar imágenes de obras</li>
+            <li><strong>Admin Panel:</strong> Gestión desde el panel administrativo de Django</li>
+        </ul>
+        
+        <h2>Tecnologías Utilizadas</h2>
+        <ul style="margin-left: 1.5rem;">
+            <li>Django 5.2.8</li>
+            <li>Python 3.13</li>
+            <li>SQLite3</li>
+            <li>HTML/CSS</li>
+        </ul>
+        
+        <h2>Contacto</h2>
+        <p>Este proyecto fue desarrollado como parte de un curso de Programación en Python.</p>
+    </div>
+</div>
+{% endblock %}

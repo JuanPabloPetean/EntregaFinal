@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar - {{ obra.titulo }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Editar Obra: {{ obra.titulo }}</h1>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn">Guardar Cambios</button>
+        <a href="{% url 'lista_obras' %}" class="btn">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

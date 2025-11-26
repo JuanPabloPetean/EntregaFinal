@@ -1,15 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Crear Obra</title>
-</head>
-<body>
-    <h1>Crear nueva obra</h1>
-    <form method="post">
+{% extends 'base.html' %}
+
+{% block title %}Crear Obra - Teatro Proyecto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Crear Nueva Obra</h1>
+    
+    <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Crear</button>
+        <div style="margin: 1rem 0;">
+            {% for field in form %}
+                <div style="margin: 1.5rem 0;">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <span style="color: red; font-size: 0.9rem;">{{ field.errors }}</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn">Crear</button>
+        <a href="{% url 'lista_obras' %}" class="btn">Cancelar</a>
     </form>
-    <p><a href="{% url 'lista_obras' %}">Volver a la lista</a></p>
-</body>
-</html>
+</div>
+{% endblock %}

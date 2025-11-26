@@ -5,4 +5,4 @@ from .models import Obra
 class ObraForm(forms.ModelForm):
     class Meta:
         model = Obra
-        fields = ['titulo', 'autor', 'descripcion', 'fecha_estreno', 'genero']
+        fields = ['titulo', 'autor', 'descripcion', 'fecha_estreno', 'genero', 'imagen']

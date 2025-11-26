@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ obra.titulo }} - Teatro Proyecto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ obra.titulo }}</h1>
+    
+    {% if obra.imagen %}
+        <img src="{{ obra.imagen.url }}" alt="{{ obra.titulo }}" style="max-width: 300px; height: auto; margin: 1rem 0; border-radius: 8px;">
+    {% endif %}
+    
+    <div style="margin: 1.5rem 0;">
+        <p><strong>Autor:</strong> {{ obra.autor }}</p>
+        <p><strong>Fecha de Estreno:</strong> {{ obra.fecha_estreno|date:"d/m/Y" }}</p>
+        <p><strong>Género:</strong> {{ obra.genero }}</p>
+        <p><strong>Descripción:</strong> {{ obra.descripcion }}</p>
+    </div>
+    
+    <div style="margin-top: 2rem;">
+        <a href="{% url 'editar_obra' obra.pk %}" class="btn">Editar</a>
+        <a href="{% url 'eliminar_obra' obra.pk %}" class="btn btn-danger">Eliminar</a>
+        <a href="{% url 'lista_obras' %}" class="btn">Volver</a>
+    </div>
+</div>
+{% endblock %}
