@@ -8,7 +8,24 @@
     
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <div style="margin: 1rem 0;">
+            {% for field in form %}
+                <div style="margin: 1.5rem 0;">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div style="color: red; font-size: 0.9rem;">
+                            {% for error in field.errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% if field.help_text %}
+                        <small style="color: #666;">{{ field.help_text|safe }}</small>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
         <button type="submit" class="btn">Registrarse</button>
     </form>
     
